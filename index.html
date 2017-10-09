@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Carbon calculator</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="js/d3-tip.js"></script>
+    <!-- Typekit -->
+    <script src="https://use.typekit.net/oxc7jph.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <!-- end typekit -->
+    <!-- myFonts 30 day trial -->
+   
+    <!-- end myFonts -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
+</head>
+<body>
+  <div id="carbon-calculator">
+    <h2 class="no-margin">Effects of carbon tax on emissions and revenue</h2>
+    <div class="margins">
+      <div class="dropdowns">
+        <div class="flex-container">
+          <label id="price-label" class="attention" for="price-selector">Select carbon tax</label>
+          <select class="grow" id="price-selector">
+              <option selected disabled hidden value="">— select tax —</option>
+              <option value="5">$5 / metric ton CO&#8322;</option>
+              <option value="10">$10 / metric ton CO&#8322;</option>
+              <option value="15">$15 / metric ton CO&#8322;</option>
+              <option value="20">$20 / metric ton CO&#8322;</option>
+              <option value="25">$25 / metric ton CO&#8322;</option>
+              <option value="30">$30 / metric ton CO&#8322;</option>
+              <option value="35">$35 / metric ton CO&#8322;</option>
+              <option value="40">$40 / metric ton CO&#8322;</option>
+              <option value="45">$45 / metric ton CO&#8322;</option>
+              <option value="50">$50 / metric ton CO&#8322;</option>
+          </select>
+        </div>
+        <div class="flex-container">
+          <label id="rate-label" class="attention" for="rate-selector">Select tax growth rate</label>
+          <select class="grow" id="rate-selector">
+            <option selected disabled hidden value="">— select growth rate —</option>
+            <option value="0">0% above inflation</option>
+            <option value="0.01">1% above inflation</option>
+            <option value="0.02">2% above inflation</option>
+            <option value="0.03">3% above inflation</option>
+            <option value="0.04">4% above inflation</option>
+            <option value="0.05">5% above inflation</option>
+          </select>
+        </div>
+      </div>
+  
+      <div class="flex-container space-around">
+        <div class="chart-wrapper grow shrink">
+          <h3>Annual emissions</h3>
+          <div id="container"></div>
+        </div>
+        <div class="chart-wrapper grow shrink">
+          <h3>Annual gross revenue</h3>
+          <div id="container-2"></div>
+        </div>
+      </div>
+    </div>
+    <div id="summary-stats" class="not-calculated">
+      <h2 class="no-margin"><span class="when-calculated-only">Cumulative results</span><span class="bind-text attention">Select a tax and growth rate to see cumulative results</span></h2>
+      <div class="flex-container space-around">
+        <div id="summary-emissions" class="summary flex-container grow">
+          <div class="summary-icon">
+            <img src="files/emissions.svg" />
+          </div>
+          <div class="summary-data grow">
+            <h2>Emissions reductions,<br />2018&ndash;2030</h2>
+            <span class="bind-total">XX.X billion metric tons</span>
+          </div>
+        </div>
+        <div id="summary-revenue" class="summary flex-container grow">
+          <div class="summary-icon">
+            <img src="files/revenue.svg" />
+          </div>
+          <div class="summary-data grow">
+            <h2>10-year gross revenue,<br />2018&ndash;2027</h2>
+              <span class="bind-total">$X,XXX billion ($2018)</span>
+          </div>
+        </div>
+      </div>
+      <p class="credits no-margin">Icons from the Noun Project. Emissions created by Francesca Ameglio; revenue by Agniraj Chatterj (CC BY 3.0 US).</p>
+    </div>
+  </div>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>
