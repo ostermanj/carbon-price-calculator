@@ -1,0 +1,1 @@
+Work for hire. Copyright is held by Resources for the Future ([more](http://www.rff.org/about/terms-and-conditions-use#copyright)).
